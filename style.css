@@ -10,6 +10,7 @@
     position: relative;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    position: relative;
 }
 
 .note:before {
@@ -30,4 +31,10 @@
 
 .note button {
     margin-top: 10px;
+}
+
+.note-footer {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
 }

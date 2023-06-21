@@ -1,7 +1,7 @@
 let notes = JSON.parse(localStorage.getItem('notes')) || [];
 
 // Possible colors for notes
-const colors = ['pink', 'blue', 'yellow', 'orange', 'green'];
+const colors = ['pink', 'light blue', 'yellow', 'orange', 'light green'];
 
 // Load existing notes
 window.onload = () => {
@@ -39,11 +39,13 @@ function displayNote(id, content, color, creationTime) {
     noteElement.classList.add('note');
     noteElement.style.backgroundColor = color;
     noteElement.innerHTML = `
+    <div class="note-content">
         ${content}
-        <br>
-        Time remaining: <span class="timeRemaining">${calculateTimeRemaining(creationTime)}</span> minutes
-        <br>
+    </div>
+    <div class="note-footer">
+        <span class="timeRemaining">Time remaining: ${calculateTimeRemaining(creationTime)} minutes</span>
         <button onclick="deleteNote(${id})">Delete Note</button>
+    </div>
     `;
 
     document.getElementById('notesContainer').appendChild(noteElement);

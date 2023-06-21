@@ -38,15 +38,14 @@ function displayNote(id, content, color, creationTime) {
     const noteElement = document.createElement('div');
     noteElement.classList.add('note');
     noteElement.style.backgroundColor = color;
-    noteElement.innerHTML = `
-    <div class="note-content">
-        ${content}
-    </div>
-    <div class="note-footer">
-        <span class="timeRemaining">Time remaining: ${calculateTimeRemaining(creationTime)} minutes</span>
-        <button onclick="deleteNote(${id})">Delete Note</button>
-    </div>
-    `;
+
+    let noteContentHTML = `<div class="note-content">${content}</div>`;
+    const timeRemaining = calculateTimeRemaining(creationTime);
+    if (timeRemaining <= 30) {
+        noteContentHTML += `<div class="note-footer"><span class="timeRemaining">Time remaining: ${timeRemaining} minutes</span></div>`;
+    }
+
+    noteElement.innerHTML = noteContentHTML + '<div class="note-footer"><button onclick="deleteNote(' + id + ')">Delete Note</button></div>';
 
     document.getElementById('notesContainer').appendChild(noteElement);
 }
@@ -67,7 +66,7 @@ function calculateTimeRemaining(creationTime) {
     const currentTime = new Date();
     const timeElapsed = Math.abs(currentTime - new Date(creationTime));
     const timeRemaining = Math.round((3*24*60*60*1000 - timeElapsed) / (60*1000));
-    return timeRemaining;
+    return timeRemaining; 
 }
 
 // Function to check for notes that should be deleted

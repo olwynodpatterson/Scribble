@@ -26,3 +26,10 @@
     bottom: 5px;
     left: 5px;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+}

@@ -1,16 +1,14 @@
 .note {
     width: 200px;
     height: 200px;
-    border: 1px solid black;
     margin: 5px;
-    padding: 5px;
+    padding: 20px;
     float: left;
     overflow: hidden;
     background-color: #FFFFCC;
     position: relative;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     border-radius: 1px;
-    position: relative;
 }
 
 .note .timeRemaining {

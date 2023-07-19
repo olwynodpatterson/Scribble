@@ -31,3 +31,17 @@
     align-items: flex-start;
     margin-top: 20px;
 }
+
+button {
+    background-color: #FFFFCC;
+    color: black;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a3a3a4;
+}

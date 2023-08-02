@@ -37,7 +37,6 @@ function createNote() {
 function displayNote(id, content, color, creationTime) {
     const noteElement = document.createElement('div');
     noteElement.classList.add('note');
-    noteElement.style.backgroundColor = color;
 
     let noteContentHTML = `<div class="note-content">${content}</div>`;
     const timeRemaining = calculateTimeRemaining(creationTime);
@@ -45,7 +44,13 @@ function displayNote(id, content, color, creationTime) {
         noteContentHTML += `<div class="note-footer"><span class="timeRemaining">Time remaining: ${timeRemaining} minutes</span></div>`;
     }
 
-    noteElement.innerHTML = noteContentHTML + '<div class="note-footer"><button onclick="deleteNote(' + id + ')">Delete Note</button></div>';
+    // New code to add a delete button (X symbol)
+    noteContentHTML += `<div class="delete-button" onclick="deleteNote(${id})">&times;</div>`;
+
+    noteElement.innerHTML = noteContentHTML;
+
+    // Set background color based on the color provided
+    noteElement.style.backgroundColor = color;
 
     document.getElementById('notesContainer').appendChild(noteElement);
 }

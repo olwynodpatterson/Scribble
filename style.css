@@ -1,3 +1,4 @@
+/* Style for the note container */
 .note {
     width: 200px;
     height: 200px;
@@ -5,43 +6,48 @@
     padding: 20px;
     float: left;
     overflow: hidden;
-    background-color: #FFFFCC;
-    position: relative;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 1px;
+    position: relative; /* Position relative to enable absolute positioning of child elements */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Box shadow for a subtle 3D effect */
+    border-radius: 1px; /* Rounded corners for the note */
 }
 
+/* Styling for the time remaining section */
 .note .timeRemaining {
-    font-weight: bold;
+    font-weight: bold; /* Bold font for time remaining text */
 }
 
-.note button {
-    margin-top: 10px;
-}
-
+/* Styling for the note footer (time remaining section and delete button) */
 .note-footer {
-    position: absolute;
-    bottom: 5px;
-    left: 5px;
+    position: absolute; /* Absolute positioning to move the footer to the bottom left of the note */
+    bottom: 5px; /* Distance from the bottom of the note */
+    left: 5px; /* Distance from the left of the note */
 }
 
+/* Styling for the container that holds the notes */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 20px;
+    display: flex; /* Use flexbox to horizontally center the 'Create Note' button */
+    justify-content: center; /* Horizontally center the button */
+    align-items: flex-start; /* Align the button to the top of the container */
+    margin-top: 20px; /* Space between the button and the notes */
+    height: 100%;
 }
 
+/* Styling for the 'Create Note' button */
 button {
-    background-color: #FFFFCC;
-    color: black;
-    padding: 10px 20px;
-    border: 1px solid black;
-    border-radius: 4px;
-    font-size: 12px;
-    cursor: pointer;
+    background-color: #FFFFFF; /* Background color of the button */
+    color: black; /* Text color of the button */
+    padding: 10px 20px; /* Padding inside the button */
+    border: 1px solid black; /* Border around the button */
+    border-radius: 4px; /* Rounded corners for the button */
+    font-size: 12px; /* Font size of the button text */
+    cursor: pointer; /* Set cursor to indicate the button is clickable */
 }
 
-button:hover {
-    background-color: #a3a3a4;
+/* Styling for the delete button (X symbol) */
+.delete-button {
+    position: absolute; /* Absolute positioning to place the delete button within the note */
+    top: 5px; /* Distance from the top of the note */
+    right: 8px; /* Distance from the right of the note */
+    font-size: 24px; /* Font size of the X symbol */
+    cursor: pointer; /* Set cursor to indicate the button is clickable */
 }

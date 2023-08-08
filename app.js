@@ -1,7 +1,7 @@
 let notes = JSON.parse(localStorage.getItem('notes')) || [];
 
 // Possible colors for notes
-const colors = ['pink', 'light blue', 'yellow', 'orange', 'light green'];
+const colors = ['#EBDEF0', '#D6EAF8', '#F5B7B1', '#F9E79F', '#D1F2EB', '#DAF7A6'];
 
 // Load existing notes
 window.onload = () => {

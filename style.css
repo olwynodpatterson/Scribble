@@ -11,6 +11,14 @@
     border-radius: 1px; /* Rounded corners for the note */
 }
 
+/* Import the Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+/* Apply the imported Google Font to the text in the notes */
+.note-content {
+    font-family: "Patrick Hand", sans-serif; /* Use the exact font name you selected */
+}
+
 /* Styling for the time remaining section */
 .note .timeRemaining {
     font-weight: bold; /* Bold font for time remaining text */
@@ -25,11 +33,12 @@
 
 /* Styling for the container that holds the notes */
 .container {
-    display: flex; /* Use flexbox to horizontally center the 'Create Note' button */
+    display: center; /* Use flexbox to horizontally center the 'Create Note' button */
     justify-content: center; /* Horizontally center the button */
-    align-items: flex-start; /* Align the button to the top of the container */
+    align-items: center; /* Align the button to the top of the container */
     margin-top: 20px; /* Space between the button and the notes */
     height: 100%;
+    box-shadow: none;
 }
 
 /* Styling for the 'Create Note' button */
@@ -50,4 +59,10 @@ button {
     right: 8px; /* Distance from the right of the note */
     font-size: 24px; /* Font size of the X symbol */
     cursor: pointer; /* Set cursor to indicate the button is clickable */
+}
+
+.center-content {
+    text-align: center; /* Center-align the content horizontally */
+    margin-top: 20px; /* Add some top margin for spacing */
+    box-shadow: none;
 }

@@ -1,14 +1,17 @@
 /* Style for the note container */
 .note {
     width: 200px;
-    height: 200px;
+    height: auto; /* Let the height adjust to content */
+    min-height: 200px; /* Set the minimum height to maintain the default size */
     margin: 5px;
     padding: 20px;
-    float: left;
+    display: flex;
+    flex-direction: column;
+    float:left;
     overflow: hidden;
-    position: relative; /* Position relative to enable absolute positioning of child elements */
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Box shadow for a subtle 3D effect */
-    border-radius: 1px; /* Rounded corners for the note */
+    position: relative;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 1px;
 }
 
 /* Import the Google Font */
@@ -17,6 +20,9 @@
 /* Apply the imported Google Font to the text in the notes */
 .note-content {
     font-family: "Patrick Hand", sans-serif; /* Use the exact font name you selected */
+    font-size: 1.5vw; /* Adjust this value as needed */
+    flex: 1; /* Allow the content to grow vertically and occupy available space */
+    overflow: visible;
 }
 
 /* Styling for the time remaining section */

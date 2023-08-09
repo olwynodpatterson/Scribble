@@ -5,12 +5,11 @@
     min-height: 200px; /* Set the minimum height to maintain the default size */
     margin: 5px;
     padding: 20px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    float:left;
+    display: inline-block; /* Display notes inline */
+    vertical-align: top; /* Align notes at the top of the line */
     overflow: hidden;
     position: relative;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     border-radius: 1px;
 }
 
@@ -39,13 +38,13 @@
 
 /* Styling for the container that holds the notes */
 .container {
-    display: center; /* Use flexbox to horizontally center the 'Create Note' button */
-    justify-content: center; /* Horizontally center the button */
-    align-items: center; /* Align the button to the top of the container */
-    margin-top: 20px; /* Space between the button and the notes */
+    display: block; /* Reset display property */
+    text-align: center; /* Center-align the notes within the container */
+    margin-top: 20px;
     height: 100%;
     box-shadow: none;
 }
+
 
 /* Styling for the 'Create Note' button */
 button {

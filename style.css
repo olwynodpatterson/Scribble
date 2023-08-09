@@ -1,3 +1,10 @@
+body {
+    background-color: #CCD9BA; /* Replace with your desired background color */
+    margin: 0; /* Remove default margin to ensure full coverage of background color */
+    padding: 0; /* Remove default padding */
+    box-shadow: none;
+}
+
 /* Style for the note container */
 .note {
     width: 200px;
@@ -76,7 +83,7 @@
     color: #36395A;
     cursor: pointer;
     display: inline-flex;
-    font-family: "JetBrains Mono",monospace;
+    font-family: "Dosis",monospace;
     height: 48px;
     justify-content: center;
     line-height: 1;

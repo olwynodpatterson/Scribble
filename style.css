@@ -5,12 +5,12 @@
     min-height: 200px; /* Set the minimum height to maintain the default size */
     margin: 5px;
     padding: 20px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     float:left;
     overflow: hidden;
     position: relative;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     border-radius: 1px;
 }
 
@@ -70,5 +70,6 @@ button {
 .center-content {
     text-align: center; /* Center-align the content horizontally */
     margin-top: 20px; /* Add some top margin for spacing */
+    padding: 5px;
     box-shadow: none;
 }

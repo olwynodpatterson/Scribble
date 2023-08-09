@@ -22,6 +22,7 @@
     font-size: 1.5vw; /* Adjust this value as needed */
     flex: 1; /* Allow the content to grow vertically and occupy available space */
     overflow: visible;
+    text-align: left;
 }
 
 /* Styling for the time remaining section */
@@ -67,6 +68,7 @@ button {
 }
 
 .center-content {
+    font-family: "Dosis", sans-serif; /* Use the exact font name you selected */
     text-align: center; /* Center-align the content horizontally */
     margin-top: 20px; /* Add some top margin for spacing */
     padding: 5px;

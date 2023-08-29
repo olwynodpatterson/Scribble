@@ -89,18 +89,3 @@ function checkNoteDeletion() {
         displayNote(note.id, note.content, note.color, note.creationTime);
     });
 }
-
-function openModal() {
-    document.getElementById('modal').style.display = 'flex';
-}
-
-function closeModal() {
-    document.getElementById('modal').style.display = 'none';
-}
-
-function createCustomNote() {
-    const noteContent = document.getElementById('noteInput').value;
-    // Process the note content and add it to the notes array
-    // ...
-    closeModal();
-}

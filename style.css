@@ -1,74 +1,80 @@
 body {
-    background-color: #CCD9BA; /* Replace with your desired background color */
-    margin: 0; /* Remove default margin to ensure full coverage of background color */
-    padding: 0; /* Remove default padding */
-    box-shadow: none;
+    background-color: #FFFFFF;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-/* Style for the note container */
 .note {
     width: 200px;
-    height: auto; /* Let the height adjust to content */
-    min-height: 200px; /* Set the minimum height to maintain the default size */
+    height: auto;
+    min-height: 200px;
     margin: 5px;
     padding: 20px;
-    display: inline-block; /* Display notes inline */
-    vertical-align: top; /* Align notes at the top of the line */
+    display: inline-block;
+    vertical-align: top;
     overflow: hidden;
     position: relative;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     border-radius: 1px;
 }
 
-/* Import the Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
-/* Apply the imported Google Font to the text in the notes */
 .note-content {
-    font-family: "Patrick Hand", sans-serif; /* Use the exact font name you selected */
-    font-size: 1.5vw; /* Adjust this value as needed */
-    flex: 1; /* Allow the content to grow vertically and occupy available space */
+    font-family: "Patrick Hand", sans-serif;
+    font-size: 16px;
+    flex: 1;
     overflow: visible;
     text-align: left;
+    color: #000000; /* Improved visibility */
 }
 
-/* Styling for the time remaining section */
+@media only screen and (max-width: 600px) {
+    .note-content {
+        font-size: 14px;
+    }
+}
+
 .note .timeRemaining {
-    font-weight: bold; /* Bold font for time remaining text */
+    font-weight: bold;
 }
 
-/* Styling for the note footer (time remaining section and delete button) */
 .note-footer {
-    position: absolute; /* Absolute positioning to move the footer to the bottom left of the note */
-    bottom: 5px; /* Distance from the bottom of the note */
-    left: 5px; /* Distance from the left of the note */
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
 }
 
-/* Styling for the container that holds the notes */
 .container {
-    display: block; /* Reset display property */
-    text-align: center; /* Center-align the notes within the container */
+    display: block;
+    text-align: center;
     margin-top: 20px;
     height: 100%;
-    box-shadow: none;
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 255);
 }
 
-
-/* Styling for the delete button (X symbol) */
 .delete-button {
-    position: absolute; /* Absolute positioning to place the delete button within the note */
-    top: 5px; /* Distance from the top of the note */
-    right: 8px; /* Distance from the right of the note */
-    font-size: 24px; /* Font size of the X symbol */
-    cursor: pointer; /* Set cursor to indicate the button is clickable */
+    font-family: "Dosis",monospace;
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .center-content {
-    font-family: "Dosis", sans-serif; /* Use the exact font name you selected */
-    text-align: center; /* Center-align the content horizontally */
-    margin-top: 20px; /* Add some top margin for spacing */
-    padding: 5px;
-    box-shadow: none;
+    font-family: "Dosis", sans-serif;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.center-content input,
+.center-content button {
+    display: block; /* Make the input and button take the full width of the container */
+    margin: 10px auto; /* Center them horizontally and add some space between them */
+    width: 20%; /* Adjust the width as per your design */
+    max-width: 200px; /* Set a maximum width */
 }
 
 /* Styling for the 'Create Note' button */
@@ -92,7 +98,7 @@ body {
     padding-left: 16px;
     padding-right: 16px;
     position: relative;
-    text-align: left;
+    text-align: center;
     text-decoration: none;
     transition: box-shadow .15s,transform .15s;
     user-select: none;

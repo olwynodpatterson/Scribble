@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="box-shadow: none;">
+<body>
+    <!-- Input for creating a new note -->
     <div class="center-content">
-        <h1>Scribble your thoughts</h1>
-        <button class="button-30" role="button" onclick="createNote()">Create Note</button>
+        <input type="text" id="new-note-content" placeholder="Scribble your thoughts...">
+        <button class="button-30" onclick="createNote()">Create Note</button>
     </div>
-    
-    <div class="container">
-        <div id="notesContainer"></div>
-        <img src="/imgs/pencils.png" style="width:128px;height:128px;"> 
-    </div>
+
+    <!-- Container for displaying notes -->
+    <div id="notes-container" class="container" displayNotes()></div>
+
     <script src="app.js"></script>
-    
 </body>
-<footer>
-    
-</footer>
 </html>

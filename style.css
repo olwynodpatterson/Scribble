@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Nunito:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
 body {
     background-color: #FFFFFF;
     min-height: 100vh;
@@ -19,8 +22,6 @@ body {
     border-radius: 1px;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
-
 .note-content {
     font-family: "Patrick Hand", sans-serif;
     font-size: 16px;
@@ -36,8 +37,14 @@ body {
     }
 }
 
-.note .timeRemaining {
-    font-weight: bold;
+.note .time-remaining {
+    font-family: "Doris", sans-serif;
+    position: absolute; /* Position the element absolutely within its parent .note */
+    bottom: 5px; /* Position from the bottom */
+    right: 5px; /* Position from the left */
+    color: #333; /* Optional: Set the text color */
+    font-size: 0.8em; /* Optional: Adjust the font size */
+    padding: 5px 5px 5px 5px;
 }
 
 .note-footer {
@@ -55,11 +62,12 @@ body {
 }
 
 .delete-button {
-    font-family: "Dosis",monospace;
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Nunito', sans-serif;
     position: absolute;
-    top: 5px;
+    top: 8px;
     right: 8px;
-    font-size: 24px;
+    font-size: 18px;
     cursor: pointer;
 }
 
@@ -89,7 +97,7 @@ body {
     color: #36395A;
     cursor: pointer;
     display: inline-flex;
-    font-family: "Dosis",monospace;
+    font-family: "Dosis", monospace; /*Monospace isn't working for some reason*/
     height: 48px;
     justify-content: center;
     line-height: 1;

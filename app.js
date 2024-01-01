@@ -17,7 +17,7 @@ function createNote() {
         return;
     }
 
-    const colors = ['#EBDEF0', '#D6EAF8', '#F5B7B1', '#F9E79F', '#D1F2EB', '#DAF7A6'];//fix colours
+    const colors = ['#EBDEF0', '#D6EAF8', '#F5B7B1', '#F9E79F', '#D1F2EB', '#DAF7A6'];
     const color = colors[Math.floor(Math.random() * colors.length)];
     const note = { id: Date.now(), content, color, timestamp: new Date() };
 

@@ -21,6 +21,19 @@ body {
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     border-radius: 1px;
 }
+    .note:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    }
+    
+    .note:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 0px 0 inset;
+    transform: translateY(-2px);
+    }
+    
+    .note:active {
+    /*box-shadow: #D6D6E7 0 3px 3px;*/
+    transform: translateY(2px);
+    }
 
 .note-content {
     font-family: "Patrick Hand", sans-serif;
@@ -62,7 +75,6 @@ body {
 }
 
 .delete-button {
-    font-family: 'Dosis', sans-serif;
     font-family: 'Nunito', sans-serif;
     position: absolute;
     top: 8px;
@@ -77,7 +89,20 @@ body {
     padding: 10px 0;
 }
 
-.center-content input,
+.center-content input{
+    display: block; /* Make the input take the full width of the container */
+    margin: 10px auto; /* Center it horizontally and add some space */
+    width: 80%; /* Adjust the width as per your design */
+    max-width: 400px; /* Set a maximum width */
+    padding: 10px; /* Add some padding inside the input box */
+    border: 2px solid #CCCCCC; /* Set the border color and width */
+    border-radius: 4px; /* Optionally, add rounded corners */
+    font-family: 'Doris', sans-serif; /* Set the font family */
+    font-size: 16px; /* Set the font size */
+    color: #666a97; /* Set the text color */
+    background-color: #FCFCFD; /* Set the background color */
+}
+
 .center-content button {
     display: block; /* Make the input and button take the full width of the container */
     margin: 10px auto; /* Center them horizontally and add some space between them */
@@ -97,7 +122,7 @@ body {
     color: #36395A;
     cursor: pointer;
     display: inline-flex;
-    font-family: "Dosis", monospace; /*Monospace isn't working for some reason*/
+    font-family: "Doris", monospace; /*Monospace isn't working for some reason*/
     height: 48px;
     justify-content: center;
     line-height: 1;
@@ -129,4 +154,9 @@ body {
     .button-30:active {
     box-shadow: #D6D6E7 0 3px 7px inset;
     transform: translateY(2px);
+    }
+
+    .page-footer{
+        font-family: "Nunito", "sans serif";
+        text-align: center;
     }

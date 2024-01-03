@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Nunito:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Grand+Hotel&family=Nunito:wght@200&display=swap');
+
 
 body {
     background-color: #FFFFFF;
@@ -72,6 +73,7 @@ body {
     margin-top: 20px;
     height: 100%;
     box-shadow: 3px 3px 10px rgba(255, 255, 255, 255);
+    padding: 8px;
 }
 
 .delete-button {
@@ -81,6 +83,13 @@ body {
     right: 8px;
     font-size: 18px;
     cursor: pointer;
+}
+
+.title-content{
+    font-family: 'Grand Hotel', cursive;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 20px;
 }
 
 .center-content {
@@ -159,4 +168,6 @@ body {
     .page-footer{
         font-family: "Nunito", "sans serif";
         text-align: center;
+        background-color: #CCCCCC;
+        padding: 8px;
     }

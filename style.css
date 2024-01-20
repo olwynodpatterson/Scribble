@@ -170,8 +170,46 @@ body {
     .page-footer{
         font-family: "Nunito", "sans serif";
         text-align: center;
-        background-color: #ffd6fe;
+        background-color: #d3d3d3;
         padding: 8px;
         box-shadow: inset;
         margin-top: auto;
     }
+
+    
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+.popup-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+    font-family: 'Doris', sans-serif; /* Set the font family */
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+    

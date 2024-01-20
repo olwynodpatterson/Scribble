@@ -88,5 +88,22 @@ function calculateRemainingTime(noteTimestamp) {
     return days > 0 ? `${days}d ${hours}h` : `${hours}h ${minutes}m`;
 }
 
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+window.onload = function() {
+    document.getElementById('popup').style.display = 'block';
+    displayNotes(); // Existing function to display notes
+}
+
+document.getElementById('new-note-content').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent the default action to avoid form submission
+        createNote(); // Call the function to create a note
+    }
+});
+
+
 // Call displayNotes on page load
 displayNotes();

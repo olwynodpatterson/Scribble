@@ -1,3 +1,18 @@
+// Global functions
+function handleKeyDown(event) {
+    if (event.key === 'Enter') {
+        if (event.shiftKey) {
+            // Allow default behavior for Shift+Enter (new line)
+            return true;
+        } else {
+            // Prevent default and create note for Enter
+            event.preventDefault();
+            createNote();
+            return false;
+        }
+    }
+}
+
 let notes = JSON.parse(localStorage.getItem('notes')) || [];
 
 function saveNotesToStorage() {
@@ -11,7 +26,9 @@ function isNoteExpired(noteTimestamp) {
 }
 
 function createNote() {
-    const content = document.getElementById('new-note-content').value;
+    const textarea = document.getElementById('new-note-content');
+    const content = textarea.value.trim();
+    
     if (!content) {
         alert('Please enter some content for the note.');
         return;
@@ -24,39 +41,36 @@ function createNote() {
     notes.push(note);
     saveNotesToStorage();
     displayNotes();
-    document.getElementById('new-note-content').value = ''; // Clear the input field
+    textarea.value = '';
 }
 
 function displayNotes() {
     const container = document.getElementById('notes-container');
     container.innerHTML = '';
+    
     notes.forEach(note => {
         if (isNoteExpired(note.timestamp)) {
-            // Remove expired note and continue to next iteration
             const noteIndex = notes.indexOf(note);
             notes.splice(noteIndex, 1);
             saveNotesToStorage();
-            return; // Skip the rest of this iteration
+            return;
         }
 
         const noteElement = document.createElement('div');
         noteElement.className = 'note';
         noteElement.style.backgroundColor = note.color;
 
-        // Create and append the note content
         const noteContent = document.createElement('div');
         noteContent.className = 'note-content';
-        noteContent.textContent = note.content; // Set the note text
+        noteContent.textContent = note.content;
         noteElement.appendChild(noteContent);
 
-        // Create and append the delete button
         const deleteButton = document.createElement('span');
         deleteButton.className = 'delete-button';
         deleteButton.textContent = 'X';
-        deleteButton.onclick = function() { deleteNote(note.id); };
+        deleteButton.onclick = () => deleteNote(note.id);
         noteElement.appendChild(deleteButton);
 
-        // Create and append the remaining time
         const timeRemaining = document.createElement('div');
         timeRemaining.className = 'time-remaining';
         timeRemaining.textContent = `Expires in: ${calculateRemainingTime(note.timestamp)}`;
@@ -76,11 +90,10 @@ function deleteNote(noteId) {
 }
 
 function calculateRemainingTime(noteTimestamp) {
-    const expirationTime = new Date(noteTimestamp).getTime() + (3 * 24 * 60 * 60 * 1000); // 3 days in milliseconds
+    const expirationTime = new Date(noteTimestamp).getTime() + (3 * 24 * 60 * 60 * 1000);
     const currentTime = Date.now();
     const timeLeft = expirationTime - currentTime;
 
-    // Convert time left from milliseconds to a more readable format
     const days = Math.floor(timeLeft / (24 * 60 * 60 * 1000));
     const hours = Math.floor((timeLeft % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
     const minutes = Math.floor((timeLeft % (60 * 60 * 1000)) / (60 * 1000));
@@ -92,18 +105,8 @@ function closePopup() {
     document.getElementById('popup').style.display = 'none';
 }
 
-window.onload = function() {
+// Initialize the app
+document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('popup').style.display = 'block';
-    displayNotes(); // Existing function to display notes
-}
-
-document.getElementById('new-note-content').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        event.preventDefault(); // Prevent the default action to avoid form submission
-        createNote(); // Call the function to create a note
-    }
+    displayNotes();
 });
-
-
-// Call displayNotes on page load
-displayNotes();

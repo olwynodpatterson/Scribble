@@ -20,16 +20,16 @@
     </div>
     <!-- Input for creating a new note -->
     <div class="center-content">
-        <input type="text" id="new-note-content" placeholder="Scribble your thoughts...">
-        <button class="button-30" onclick="createNote()">CREATE NOTE</button>
+        <textarea id="new-note-content" class="preserveTextareaLineBreaks" placeholder="Scribble your thoughts..." rows="1" onkeypress="if(event.keyCode==13 && !event.shiftKey) { createNote(); return false; }"></textarea>
     </div>
 
     <!-- Container for displaying notes -->
-    <div id="notes-container" class="container" displayNotes()></div>
+    <div id="notes-container" class="container"></div>
+
+    <footer class="page-footer">
+        <h4>Built with Love by <a href="https://www.linkedin.com/in/olwyn-patterson-/" target="_blank">Olwyn</a> <3</h4>
+    </footer>
 
     <script src="app.js"></script>
 </body>
-<footer class="page-footer">
-        <h4>Built with Love by <a href="https://www.linkedin.com/in/olwyn-patterson-/">Olwyn</a> <3</h4>
-</footer>
 </html>

@@ -45,6 +45,7 @@ body {
     overflow: visible;
     text-align: left;
     color: #000000; /* Improved visibility */
+    white-space: pre-line;
 }
 
 @media only screen and (max-width: 600px) {
@@ -100,28 +101,44 @@ body {
     padding: 10px 0;
 }
 
-.center-content input{
-    display: block; /* Make the input take the full width of the container */
-    margin: 10px auto; /* Center it horizontally and add some space */
-    width: 80%; /* Adjust the width as per your design */
-    max-width: 400px; /* Set a maximum width */
-    padding: 10px; /* Add some padding inside the input box */
-    border: 2px solid #CCCCCC; /* Set the border color and width */
-    border-radius: 4px; /* Optionally, add rounded corners */
-    font-family: 'Doris', sans-serif; /* Set the font family */
-    font-size: 16px; /* Set the font size */
-    color: #666a97; /* Set the text color */
-    background-color: #FCFCFD; /* Set the background color */
+.center-content textarea {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    border: 2px solid #CCCCCC;
+    border-radius: 4px;
+    font-family: 'Doris', sans-serif;
+    font-size: 16px;
+    color: #666a97;
+    background-color: #FCFCFD;
+    resize: none;
+    min-height: 20px;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
-.center-content button {
-    display: block; /* Make the input and button take the full width of the container */
-    margin: 10px auto; /* Center them horizontally and add some space between them */
-    width: 20%; /* Adjust the width as per your design */
-    max-width: 200px; /* Set a maximum width */
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Styling for the 'Create Note' button */
+.input-group input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #CCCCCC;
+    border-radius: 4px;
+    font-family: 'Doris', sans-serif;
+    font-size: 16px;
+    color: #666a97;
+    background-color: #FCFCFD;
+}
+
 .button-30 {
     align-items: center;
     appearance: none;
@@ -133,7 +150,7 @@ body {
     color: #36395A;
     cursor: pointer;
     display: inline-flex;
-    font-family: "Doris", monospace; /*Monospace isn't working for some reason*/
+    font-family: "Doris", monospace;
     height: 48px;
     justify-content: center;
     line-height: 1;
@@ -151,7 +168,8 @@ body {
     white-space: nowrap;
     will-change: box-shadow,transform;
     font-size: 18px;
-    }
+    margin: 0;
+}
     
     .button-30:focus {
     box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
@@ -219,5 +237,9 @@ body {
     background-color: #f8f9fa;
     margin-top: 40px;
     width: 100%;
+}
+
+.preserveTextareaLineBreaks {
+    white-space: pre-line;
 }
     
